@@ -1,5 +1,6 @@
-import re
+from re import template
 from django.shortcuts import render, HttpResponse
+from django.template import loader
 
 #def index(request):
 #    return HttpResponse("Hello world")
@@ -19,3 +20,7 @@ def web(request):
 def calculadora(request):
     my_dict={'insert_me': "Ready to show the calculator from viwes.py!"}
     return render(request, "first_app/calculadora.html", context=my_dict)
+
+def pagina(request):
+    template = loader.get_template('base.html')
+    HttpResponse(template.render())

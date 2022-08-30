@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import  Pagina, Topico, Webpage
 
-# Register your models here.
+admin.site.register(Topico)
+admin.site.register(Webpage)
+admin.site.register(Pagina)
