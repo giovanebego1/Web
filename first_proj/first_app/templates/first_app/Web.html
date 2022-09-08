@@ -1,28 +1,32 @@
 <!DOCTYPE html>
-
+{% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
-<html>
+<html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <title>HTML & CSS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'first_app/css/style_web.css' %}">
 </head>
+
 <header>
+    {% block header_block %}
     <h1>
         HTML & CSS
     </h1>
     <h2>
         Lugares historicos de Londrina
     </h2>
+    {% endblock %}
 </header>
 
 <body>
+    {% block body_block %}
     <nav>
         <ul>
             <a href="/https://www.iat.pr.gov.br/Pagina/Parque-Estadual-Mata-dos-Godoy-PEMG/">Parque Estadual Mata dos Godoy</a> |
-            <a href="/style.css/">CSS</a> |
-            <a href="/script.js/">JavaScript</a> |
         </ul>
     </nav>
     <div class="Mata dos Godoy">
@@ -32,10 +36,11 @@
         <img src="{% static "first_app/imgs/Mata dos godoy.jpg" %}" alt="Mata">
         
     </div>
-
+    {% endblock %}
 </body>
 <footer>
-    Desenvolved by: Giovane Bego
+    {% block footer_block %}
+    Developed by: Giovane Bego
+    {% endblock %}
 </footer>
-
 </html>

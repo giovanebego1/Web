@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-
+{% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 <html lang="pt-br">
 
 <head>
+    {% block head_block %}
     <meta charset="UTF-8">
     <title>Help</title>
+    {% endblock %}
 </head>
+
 <body>
+    {% block body_block %}
     <h1>Hello, how i can help you ?</h1>
         <container>
             <p>
@@ -16,6 +21,6 @@
             </p>
             <img src="{% static "first_app/imgs/html.png" %}" alt="não mostrou de novo">
         </container>
-    {{ variavel }}
+    {% endblock %}
 </body>
 </html>

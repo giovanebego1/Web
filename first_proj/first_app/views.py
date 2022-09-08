@@ -1,3 +1,4 @@
+from email.mime import base
 from re import template
 from django.shortcuts import render, HttpResponse
 from django.template import loader
@@ -24,4 +25,7 @@ def calculadora(request):
 
 def first_form(request):
     form = forms.first_form()
-    return render(request, 'first_form.html',{'form':form})
+    return render(request, 'first_app/first_form.html',{'form':form})
+
+def base(request):
+    return render(request, 'base.html', {'base':base})
